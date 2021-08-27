@@ -18,6 +18,8 @@ runs:
         extra_nix_config: |
           experimental-features = nix-command flakes
     - run: |
+        git config --global user.email "auto-update-flake@github.com"
+        git config --global user.name "Flake Auto Update"
         nix flake update --commit-lock-file
         if nix flake check; then
             git push origin master
