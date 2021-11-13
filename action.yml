@@ -16,7 +16,7 @@ runs:
         git config --global user.email "auto-update-flake@github.com"
         git config --global user.name "Flake Auto Update"
         nix --extra-experimental-features 'nix-command flakes' flake update --commit-lock-file
-        if echo -n | nix --extra-experimental-features 'nix-command flakes' flake check; then
+        if nix --extra-experimental-features 'nix-command flakes' flake check; then
             git push origin master
         fi
       shell: bash
