@@ -17,6 +17,6 @@ runs:
         git config --global user.name "Flake Auto Update"
         nix --extra-experimental-features 'nix-command flakes' flake update --commit-lock-file
         if nix --extra-experimental-features 'nix-command flakes' flake check; then
-            git push origin master
+            git push
         fi
       shell: bash
